@@ -9,7 +9,7 @@ import 'rxjs/add/operator/finally';
 
 const endpoints = {
   book: 'api/books',
-  currency: 'http://api.fixer.io/latest?base=USD'
+  currency: 'https://api.fixer.io/latest?base=USD'
 };
 
 
