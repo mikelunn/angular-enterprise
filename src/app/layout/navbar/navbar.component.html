@@ -1,0 +1,12 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+
+      <a class="navbar-brand navbar-title text-center center-block" href="/" >
+        <span *ngIf="navButtonActive">{{navMenuTitle}}</span>
+        <img *ngIf="!navButtonActive" alt="Miami Beach" src="https://secure.miamibeachfl.gov/parking/content/images/mb-logo-w.png">
+      </a>
+     <ng-content></ng-content>
+    </div>
+  </div>
+</nav>

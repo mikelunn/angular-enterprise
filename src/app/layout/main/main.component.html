@@ -1,0 +1,14 @@
+<app-navbar [navButtonActive]="navButtonActive$ | async" [navMenuTitle]="navMenuTitle$ | async">
+  <app-nav-menu-back
+    [navButtonActive]="navButtonActive$ | async"
+    [hasHistory]="hasNavHistory$ | async"
+    (back)="store.dispatch($event)">
+  </app-nav-menu-back>
+  <app-nav-button [active]="navButtonActive$ | async" (toggle)="store.dispatch($event)"></app-nav-button>
+</app-navbar>
+<app-nav-menu-overlay [active]="navButtonActive$ | async">
+  <app-nav-menu-item *ngFor="let navItem of currentNavItems$ | async" [navItem]="navItem" (activate)="navigate($event)"></app-nav-menu-item>
+</app-nav-menu-overlay>
+<div class="container-fluid" style="margin-top: 50px;">
+    <router-outlet></router-outlet>
+</div>
